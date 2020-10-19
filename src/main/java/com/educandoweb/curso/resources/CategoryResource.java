@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.educandoweb.curso.entities.Category;
-import com.educandoweb.curso.entities.Order;
 import com.educandoweb.curso.services.CategoryService;
 
 @RestController

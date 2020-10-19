@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.educandoweb.curso.entities.Order;
 import com.educandoweb.curso.entities.Category;
 import com.educandoweb.curso.repositories.CategoryRepository;
 
@@ -20,8 +19,8 @@ public class CategoryService {
 		return repository.findAll();
 	}
 	
-	public Order findById(Long id) {
-		Optional<Order> obj = Optional.empty();
+	public Category findById(Long id) {
+		Optional<Category> obj = Optional.empty();
 		return obj.get();
 	}
 }
