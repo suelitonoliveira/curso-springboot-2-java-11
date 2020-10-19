@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.educandoweb.curso.entities.Order;
 import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.repositories.UserRepository;
 
@@ -20,8 +19,8 @@ public class UserServices {
 		return repository.findAll();
 	}
 	
-	public Order findById(Long id) {
-		Optional<Order> obj = Optional.empty();
+	public User findById(Long id) {
+		Optional<User> obj = Optional.empty();
 		return obj.get();
 	}
 }
