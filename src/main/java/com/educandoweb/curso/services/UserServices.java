@@ -15,12 +15,13 @@ public class UserServices {
 	@Autowired
 	private UserRepository repository;
 	
-	public List<User> finAll(){
+	public List<User> findAll(){
 		return repository.findAll();
 	}
 	
 	public User findById(Long id) {
-		Optional<User> obj = Optional.empty();
+		Optional<User>  obj = repository.findById(id);
 		return obj.get();
 	}
+
 }

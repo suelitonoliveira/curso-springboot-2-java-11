@@ -9,6 +9,6 @@ public interface CategoryRepository extends JpaRepository<Category, Long>{
 
 
 
-	//void saveAll(List<User> asList);
+	
 
 }
