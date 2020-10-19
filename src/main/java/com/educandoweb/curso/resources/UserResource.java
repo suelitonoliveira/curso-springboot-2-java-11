@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.educandoweb.curso.entities.Order;
+import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.services.UserServices;
 
 @RestController
@@ -20,8 +21,8 @@ public class UserResource {
 	private UserServices service;
 	
 	@GetMapping
-	public ResponseEntity<List<Order>>  findAll(){
-		List<Order> list =  service.finAll();
+	public ResponseEntity<List<User>>  findAll(){
+		List<User> list =  service.finAll();
 		return ResponseEntity.ok().body(list);
 	}
 	

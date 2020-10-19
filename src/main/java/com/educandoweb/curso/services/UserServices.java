@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.educandoweb.curso.entities.Order;
+import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.repositories.UserRepository;
 
 @Service
@@ -15,12 +16,12 @@ public class UserServices {
 	@Autowired
 	private UserRepository repository;
 	
-	public List<Order> finAll(){
+	public List<User> finAll(){
 		return repository.findAll();
 	}
 	
 	public Order findById(Long id) {
-		Optional<Order> obj = repository.findById(id);
+		Optional<Order> obj = Optional.empty();
 		return obj.get();
 	}
 }
