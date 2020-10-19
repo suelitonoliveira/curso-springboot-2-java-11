@@ -1,44 +1,65 @@
 package com.educandoweb.curso.entities;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.Instant;
 
-public class Order {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tb_order")
+public class Order implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private Date moment;
+	private Instant moment;
 
+	@ManyToOne
+	@JoinColumn(name = "client_id")
+	private User client;
 	
 	public Order() {
 		
 	}
 
-
-	public Order(Integer id, Date moment) {
+	public Order(Integer id, Instant moment, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
+		this.client = client;
 	}
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
-	public Date getMoment() {
+	public Instant getMoment() {
 		return moment;
 	}
 
-
-	public void setMoment(Date moment) {
+	public void setMoment(Instant moment) {
 		this.moment = moment;
 	}
 
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
+	}
 
 	@Override
 	public int hashCode() {
@@ -47,7 +68,6 @@ public class Order {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -65,7 +85,9 @@ public class Order {
 			return false;
 		return true;
 	}
-	
+
+
+
 	
 	
 }
