@@ -39,9 +39,9 @@ public class TestConfig implements CommandLineRunner {
 		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), u2);
 		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), u1);
 		
-		Category cat1 = new Category(null, "teste");
-		Category cat2 = new Category(null, "teste");
-		Category cat3 = new Category(null, "teste");
+		Category cat1 = new Category(null, "eletronico");
+		Category cat2 = new Category(null, "books");
+		Category cat3 = new Category(null, "computers");
 		
 		userRepository.saveAll(Arrays.asList(u1,u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
